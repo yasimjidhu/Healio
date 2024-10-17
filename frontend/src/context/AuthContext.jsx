@@ -9,15 +9,14 @@ export const useAuth = () => {
 };
 
 export const AuthContextProvider = ({ children }) => {
+
   const [user, setUser] = useState(() => {
-    // Retrieve user data from localStorage if available
     const storedUser = localStorage.getItem('user');
-    return storedUser ? JSON.parse(storedUser) : null; // Parse if available, else return null
+    return storedUser ? JSON.parse(storedUser) : null; 
   });
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    // You can set user data from cookies or any other logic here if needed
   }, []);
 
   const login = async (email, password) => {
@@ -35,7 +34,7 @@ export const AuthContextProvider = ({ children }) => {
       const { user: userData, token } = response.data;
       setUser(userData);
       localStorage.setItem('token', token);
-      localStorage.setItem('user', JSON.stringify(userData)); // Store user data
+      localStorage.setItem('user', JSON.stringify(userData)); 
       return userData;
     } catch (axiosError) {
       setError(axiosError.response ? axiosError.response.data : axiosError.message);
