@@ -13,6 +13,10 @@ const Register = () => {
   const { register, error } = useAuth();
 
   const handleSubmit = async (e) => {
+    if(!username || !email || !password){
+      alert('all fields required')
+    }
+    
     e.preventDefault();
     setLoading(true);
     await register(username, email, password);

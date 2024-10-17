@@ -37,6 +37,7 @@ export const AuthContextProvider = ({ children }) => {
       localStorage.setItem('user', JSON.stringify(userData)); 
       return userData;
     } catch (axiosError) {
+      alert(axiosError)
       setError(axiosError.response ? axiosError.response.data : axiosError.message);
     }
   };
@@ -57,6 +58,7 @@ export const AuthContextProvider = ({ children }) => {
       setUser(response.data.user);
       localStorage.setItem('user', JSON.stringify(response.data.user)); // Store user data
     } catch (axiosError) {
+      alert(axiosError)
       setError(axiosError.response ? axiosError.response.data : axiosError.message);
     }
   };

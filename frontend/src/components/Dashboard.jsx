@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 import { getPatients } from "../services/api";
-import PatientCard from "./patientCard";
+import PatientCard from "./PatientCard";
 
 const Dashboard = () => {
   const { user } = useAuth();
@@ -14,7 +14,6 @@ const Dashboard = () => {
   const [maxAge, setMaxAge] = useState("");
 
   const patientsPerPage = 8;
-  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchPatients = async () => {
