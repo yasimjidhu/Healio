@@ -11,7 +11,6 @@ const useAxios = () => {
 
     try {
       const response = await axios(url,options);
-      console.log('resonse of login in useaxios',response.data)
       return { response, error: null };
     } catch (axiosError) {
       setError(axiosError);

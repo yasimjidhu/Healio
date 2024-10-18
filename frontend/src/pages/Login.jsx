@@ -11,7 +11,7 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const user = await login(email, password); 
-    console.log('user in login', user);
+
     if (user && user.role === 'admin') {
       navigate('/prior-authorization-list');
     } else {

@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { useAuth } from "../context/AuthContext";
 import { toast } from "react-toastify";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import ClipLoader from "react-spinners/ClipLoader";
 
 const Register = () => {
+
+  const navigate = useNavigate();
+
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -16,10 +19,11 @@ const Register = () => {
     if(!username || !email || !password){
       alert('all fields required')
     }
-    
+
     e.preventDefault();
     setLoading(true);
     await register(username, email, password);
+    navigate('/dashboard')
     setLoading(false);
   };
 

@@ -62,7 +62,7 @@ Start the Application
 Start the Backend Server (navigate to the backend directory):
 
 cd backend
-npm start
+npm start       
 
 Start the Frontend:
 

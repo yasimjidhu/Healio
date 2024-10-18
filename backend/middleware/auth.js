@@ -8,7 +8,6 @@ const verifyToken = (req, res, next) => {
 
     // Check if the token is present
     if (!token) {
-        console.log('No token found in cookies');
         return res.status(401).json({ message: "Access Denied" });
     }
 
@@ -22,7 +21,6 @@ const verifyToken = (req, res, next) => {
         // Call the next middleware
         next();
     } catch (error) {
-        console.log('Token verification failed:', error);
         return res.status(400).json({ message: "Invalid Token" });
     }
 };

@@ -29,7 +29,6 @@ const AddPatientForm = () => {
     const { response, error: axiosError } = await request(options);
 
     if (response) {
-      console.log('Patient created:', response.data);
       toast.success('Patient created')
     } else {
       console.error('Error creating patient:', axiosError);

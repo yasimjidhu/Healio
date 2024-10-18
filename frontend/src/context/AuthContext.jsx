@@ -54,7 +54,6 @@ export const AuthContextProvider = ({ children }) => {
         },
       });
 
-      console.log('response of register', response);
       setUser(response.data.user);
       localStorage.setItem('user', JSON.stringify(response.data.user)); // Store user data
     } catch (axiosError) {
